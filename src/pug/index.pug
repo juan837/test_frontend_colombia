@@ -1,11 +1,13 @@
 doctype html
-html(lang="en")
+html(lang="en", ng-app="appTest")
   head
     title= pageTitle
+    include partials/_styles
     include partials/_scripts
     base(href="/")
-  body(ng-app="appTest")
-    header
-      include partials/_header
-    .main-container(ng-controller="MainCtrl")
-        div(ui-view="")
+  body.ng-scope.layout-column(ng-controller="MainCtrl")
+    md-content
+      .content(layout="column", layout-align-sm="center center", layout-align-md="center center")
+        include partials/_header
+        md-content#main(ui-view="")
+        

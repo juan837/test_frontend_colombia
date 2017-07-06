@@ -1,11 +1,11 @@
-/**
- * Created by juan on 29/02/16.
- */
 (function () {
     'use strict';
 
     var app = angular.module("appTest", [
-        'ui.router'
+        'ui.router',
+        'ngMaterial',
+        'ManageLocationsCtrl',
+        'ShowLocationsCtrl'
     ]);
 
     app
@@ -16,16 +16,17 @@
         })
         .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
             $stateProvider
-                .state('place-list', {
-                    url: '/place-list',
-                    templateUrl: 'admin/place-list',
-                    controller: 'PlaceAdListController'
+                .state('manage-locations', {
+                    url: '/manage-locations',
+                    templateUrl: '../../manageLocations.html',
+                    controller: 'ManageLocationsController'
                 })
-                .state('place-new', {
-                    url: '/place-new',
-                    templateUrl: 'admin/place-new',
-                    controller: 'PlaceAdCreationController'
+                .state('show-locations', {
+                    url: '/show-locations',
+                    templateUrl: '../../showLocations.html',
+                    controller: 'ShowLocationsController'
                 });
+            $urlRouterProvider.otherwise('/manage-locations');    
 
 
             $locationProvider.html5Mode(true);
