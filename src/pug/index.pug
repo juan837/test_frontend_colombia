@@ -2,15 +2,10 @@ doctype html
 html(lang="en")
   head
     title= pageTitle
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
-  body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
+    include partials/_scripts
+    base(href="/")
+  body(ng-app="appTest")
+    header
+      include partials/_header
+    .main-container(ng-controller="MainCtrl")
+        div(ui-view="")
