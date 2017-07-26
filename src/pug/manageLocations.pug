@@ -1,1 +1,23 @@
-h1 This is a CRUD
+h2 Search Position
+md-input-container.md-block(md-no-float)
+    input(ng-model="location.address" type="text" placeholder="Address")
+    md-button.md-raised(ng-click="findLocation(location.address)") Search
+
+md-card(md-theme="default" md-theme-watch ng-show="locationInfo.visible")  
+    md-card-title
+        md-card-title-text
+            span.md-headline {{ locationInfo.address }}
+            span.md-subhead Address: {{ locationInfo.formatted_address }}
+            span.md-subhead Latitude: {{ locationInfo.latitude }}
+            span.md-subhead Longitude: {{ locationInfo.longitude }}
+    md-card-actions(layout="row" layout-align="end center")
+        md-button(ng-click="clean()") Clean     
+        md-button(ng-click="addLocation()") Add to List        
+
+md-list-item.md-3-line(ng-repeat="location in locations")
+    .md-list-item-text
+        h4 {{ location.name }}
+        p Latitude: {{ location.latitude }}
+        p Longitude: {{ location.longitude }}
+    //- md-button.md-secondary Edit
+    md-button.md-secondary(ng-click="removeLocation(location)") Remove

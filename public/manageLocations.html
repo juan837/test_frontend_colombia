@@ -1,0 +1,23 @@
+
+<h2>Search Position</h2>
+<md-input-container class="md-block" md-no-float>
+  <input ng-model="location.address" type="text" placeholder="Address">
+  <md-button class="md-raised" ng-click="findLocation(location.address)">Search</md-button>
+</md-input-container>
+<md-card md-theme="default" md-theme-watch ng-show="locationInfo.visible"> 
+  <md-card-title>
+    <md-card-title-text><span class="md-headline">{{ locationInfo.address }}</span><span class="md-subhead">Address: {{ locationInfo.formatted_address }}</span><span class="md-subhead">Latitude: {{ locationInfo.latitude }}</span><span class="md-subhead">Longitude: {{ locationInfo.longitude }}</span></md-card-title-text>
+  </md-card-title>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button ng-click="clean()">Clean     </md-button>
+    <md-button ng-click="addLocation()">Add to List        </md-button>
+  </md-card-actions>
+</md-card>
+<md-list-item class="md-3-line" ng-repeat="location in locations">
+  <div class="md-list-item-text">
+    <h4>{{ location.name }}</h4>
+    <p>Latitude: {{ location.latitude }}</p>
+    <p>Longitude: {{ location.longitude }}</p>
+  </div>
+  <md-button class="md-secondary" ng-click="removeLocation(location)">Remove</md-button>
+</md-list-item>

@@ -5,7 +5,8 @@
         'ui.router',
         'ngMaterial',
         'ManageLocationsCtrl',
-        'ShowLocationsCtrl'
+        'ShowLocationsCtrl',
+        'firebase'
     ]);
 
     app

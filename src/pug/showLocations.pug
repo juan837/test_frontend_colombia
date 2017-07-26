@@ -1,1 +1,13 @@
-h1 This is a Map
+h1 See all locations on Google Map
+
+ng-map(center="[41,-87]" zoom="1" style="height: 500px;")
+    info-window(id="foo" on-mouseover="mouseover()")
+      div(ng-non-bindable)
+        | Addres: {{ info.address }}
+        br
+        | Lat: {{anchor.getPosition().lat()}}
+        br
+        | Lng: {{anchor.getPosition().lng()}}
+
+    marker(id="{{id}}" position="{{market.coords}}"  on-click="markerClick(event, id)" ng-repeat="(id, market) in markers")
+    

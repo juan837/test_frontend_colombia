@@ -6,8 +6,30 @@ script(type='text/javascript', src="assets/js/lib/angular-aria/angular-aria.min.
 script(type='text/javascript', src="assets/js/lib/angular-messages/angular-messages.min.js")
 script(type='text/javascript', src="assets/js/lib/angular-resource/angular-resource.min.js")
 
+// Load Firebase
+script(type='text/javascript', src="assets/js/lib/firebase/firebase.js")
+script(type='text/javascript', src="assets/js/lib/angularfire/dist/angularfire.min.js")
+
 // Angular Material Library
 script(type='text/javascript', src="assets/js/lib/angular-material/angular-material.min.js")
+
+// Angular Google Maps
+//- script(src="http://maps.google.com/maps/api/js?sensor=false")
+//- script(type='text/javascript', src="assets/js/lib/underscore/underscore-min.js")
+script(type='text/javascript', src="assets/js/lib/ngmap/build/scripts/ng-map.min.js")
+//- script(src="http://maps.google.com/maps/api/js")
+script(src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyAzYo0hCMtDjqkXM0_1KPZMf5txWiU0UGU")
+
+script.
+    var config = {
+        apiKey: "AIzaSyBfBEsG0vAG1rag-TLUsZ7qcsELvV0FLEI",
+        authDomain: "test-frontend-colombia.firebaseapp.com",
+        databaseURL: "https://test-frontend-colombia.firebaseio.com",
+        projectId: "test-frontend-colombia",
+        storageBucket: "test-frontend-colombia.appspot.com",
+        messagingSenderId: "989187249149"
+    };
+    firebase.initializeApp(config);
 
 // Angular Code
 script(type='text/javascript', src="assets/js/app.js")
